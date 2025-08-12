@@ -1,9 +1,7 @@
+---> Wave Mart is a modern e-commerce web application designed to provide a smooth and user-friendly shopping journey. With a clean UI and efficient backend, it aims to make online shopping fast, secure, and enjoyable.
 
-Wave Mart is a modern e-commerce web application designed to provide a smooth and user-friendly shopping journey. 
-With a clean UI and efficient backend, it aims to make online shopping fast, secure, and enjoyable.
 
-🚀 Features
-🛒 Product Catalog – Browse products by categories
+🚀 Features 🛒 Product Catalog – Browse products by categories
 
 🔍 Search & Filter – Quickly find what you need
 
@@ -15,8 +13,4 @@ With a clean UI and efficient backend, it aims to make online shopping fast, sec
 
 📱 Responsive Design – Works on desktop, tablet, and mobile
 
-🛠️ Tech Stack
-Frontend: HTML, CSS, JavaScript (React / Vanilla JS)
-Backend: Node.js, Express.js
-Database: MongoDB / MySQL
-Version Control: Git & GitHub
+🛠️ Tech Stack Frontend: HTML, CSS, JavaScript Backend: Node.js, Express.js Database: MongoDB / MySQL Version Control: Git & GitHub
