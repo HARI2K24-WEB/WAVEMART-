@@ -6,8 +6,12 @@ body {
   font-weight: 400;
   color: #6c757d;
   background-color: #000000;
+  
 }
 
+.header:hover{
+    background-color: #ffffff;
+}
 .header{
     position: absolute;
     width: 50px;

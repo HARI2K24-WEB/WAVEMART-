@@ -1,6 +1,5 @@
 ---> Wave Mart is a modern e-commerce web application designed to provide a smooth and user-friendly shopping journey. With a clean UI and efficient backend, it aims to make online shopping fast, secure, and enjoyable.
 
-
 🚀 Features 🛒 Product Catalog – Browse products by categories
 
 🔍 Search & Filter – Quickly find what you need
