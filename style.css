@@ -1,24 +1,24 @@
 
 body {
   margin: 0;
-  font-family: "Roboto", sans-serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #6c757d;
   background-color: #000000;
-  
 }
-
-.header:hover{
-    background-color: #ffffff;
+.navbar{
+    height: 30px;
+    background-color: #36163e;
+   
 }
-.header{
-    position: absolute;
-    width: 50px;
-    left: 50px;
-    height: 40px;
-    background-color: #17a2b8;
-    border: 60px rgb(255, 255, 255);
-
-
+.icon{
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.content{
+  position: absolute;
+}
+.content,a{
+  text-decoration: none;
+  margin-left: 60px;
+  gap: 2px;
 }
