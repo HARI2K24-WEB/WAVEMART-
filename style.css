@@ -2,7 +2,7 @@
             --primary-color: #f703ca;
             --secondary-color: #eeddee;
             --accent-color: #ff006e;
-            --light-bg: #f8f9fa;
+            --light-bg: #00d9ff;
             --dark-text: #212529;
         }
         
@@ -26,7 +26,7 @@
             max-width: 400px;
             margin: 5rem auto;
             padding: 2rem;
-            background: white;
+            background: rgb(255, 255, 255);
             border-radius: 12px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
