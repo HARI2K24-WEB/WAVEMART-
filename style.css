@@ -1,0 +1,183 @@
+        :root {
+            --primary-color: #f703ca;
+            --secondary-color: #eeddee;
+            --accent-color: #ff006e;
+            --light-bg: #f8f9fa;
+            --dark-text: #212529;
+        }
+        
+        body {
+            background-color: var(--light-bg);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-text);
+        }
+        
+        .wave-brand {
+            font-weight: 700;
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+        }
+        
+        .auth-container {
+            max-width: 400px;
+            margin: 5rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-control {
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(58, 134, 255, 0.25);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border: none;
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 1.5rem 0;
+            color: #6c757d;
+        }
+        
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        .divider::before {
+            margin-right: .5em;
+        }
+        
+        .divider::after {
+            margin-left: .5em;
+        }
+        
+        .social-btn {
+            display: block;
+            width: 100%;
+            padding: 0.7rem;
+            border-radius: 8px;
+            margin-bottom: 0.8rem;
+            text-align: center;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .social-btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .facebook-btn {
+            background-color: #3b5998;
+            color: white;
+        }
+        
+        .google-btn {
+            background-color: #db4a39;
+            color: white;
+        }
+        
+        .twitter-btn {
+            background-color: #1da1f2;
+            color: white;
+        }
+        
+        .profile-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .profile-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .profile-field {
+            margin-bottom: 1.5rem;
+        }
+        
+        .profile-field label {
+            font-weight: 600;
+            color: #6c757d;
+            margin-bottom: 0.3rem;
+        }
+        
+        .profile-field .form-control {
+            background-color: #f8f9fa;
+        }
+        
+        .btn-danger {
+            background: linear-gradient(45deg, #ff006e, #fb5607);
+            border: none;
+            padding: 0.8rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-danger:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+        
+        .page-container {
+            display: none;
+        }
+        
+        .active-page {
+            display: block;
+        }
+        
+        .nav-back {
+            cursor: pointer;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .nav-back:hover {
+            color: var(--secondary-color);
+        }

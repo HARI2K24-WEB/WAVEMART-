@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAVEMART</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="login-page" class="page-container active-page">
+        <div class="auth-container">
+            <div class="text-center">
+                <div class="wave-brand">WAVEMART</div>
+                <h2 class="mb-4">Sign in to your account</h2>
+            </div>
+            
+            <form id="login-form">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                </div>
+                
+                <div class="mb-3 text-end">
+                    <a href="#" id="forgot-password" class="text-decoration-none">Forgot your password?</a>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100">Sign in</button>
+                
+                <div class="text-center mt-3">
+                    <span>Don't have an account? </span>
+                    <a href="#" id="goto-create-account" class="text-decoration-none">Create</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Create Account Page -->
+    <div id="create-account-page" class="page-container">
+        <div class="auth-container">
+            <a class="nav-back" id="back-to-login">
+                <i class="fas fa-arrow-left me-2"></i> Back to login
+            </a>
+            
+            <div class="text-center">
+                <div class="wave-brand">WAVEMART</div>
+                <h2 class="mb-4">Create account</h2>
+            </div>
+            
+            <form id="create-account-form">
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="username-check">
+                        <label class="form-check-label" for="username-check">Username</label>
+                    </div>
+                    <input type="text" class="form-control mt-1" placeholder="Choose a username" disabled>
+                </div>
+                
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="password-check" checked>
+                        <label class="form-check-label" for="password-check">Password</label>
+                    </div>
+                    <input type="password" class="form-control mt-1" placeholder="Create a password" disabled>
+                </div>
+                
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="email-check">
+                        <label class="form-check-label" for="email-check">E-mail</label>
+                    </div>
+                    <input type="email" class="form-control mt-1" placeholder="Enter your email" disabled>
+                </div>
+                
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="mobile-check">
+                        <label class="form-check-label" for="mobile-check">Mobile</label>
+                    </div>
+                    <input type="tel" class="form-control mt-1" placeholder="Enter your mobile number" disabled>
+                </div>
+                
+                <hr class="my-4">
+                
+                <button type="submit" class="btn btn-primary w-100">Create <i class="fas fa-arrow-right ms-2"></i></button>
+                
+                <div class="divider">Or create account using social media</div>
+                
+                <button type="button" class="social-btn facebook-btn">
+                    <i class="fab fa-facebook-f me-2"></i> Continue with Facebook
+                </button>
+                
+                <button type="button" class="social-btn google-btn">
+                    <i class="fab fa-google me-2"></i> Continue with Google
+                </button>
+                
+                <button type="button" class="social-btn twitter-btn">
+                    <i class="fab fa-twitter me-2"></i> Continue with Twitter
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Profile Page -->
+    <div id="profile-page" class="page-container">
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="wave-brand">WAVEMART</div>
+                <h2>Profile</h2>
+            </div>
+            
+            <form id="profile-form">
+                <div class="text-center mb-4">
+                    <img src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-pic">
+                    <div>
+                        <a href="#" class="text-decoration-none">Change Photo</a>
+                    </div>
+                </div>
+                
+                <div class="profile-field">
+                    <label for="profile-name">Name</label>
+                    <input type="text" class="form-control" id="profile-name" placeholder="Enter your full name">
+                </div>
+                
+                <div class="profile-field">
+                    <label for="profile-dob">dd/mm/yyyy</label>
+                    <input type="date" class="form-control" id="profile-dob">
+                </div>
+                
+                <div class="profile-field">
+                    <label for="profile-location">Location</label>
+                    <input type="text" class="form-control" id="profile-location" placeholder="Enter your location">
+                </div>
+                
+                <div class="profile-field">
+                    <label for="profile-contact">Contact Number</label>
+                    <input type="tel" class="form-control" id="profile-contact" placeholder="Enter your contact number">
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">UPDATE PROFILE</button>
+                    <button type="button" class="btn btn-danger" id="delete-profile">DELETE PROFILE</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // DOM Elements
+        const loginPage = document.getElementById('login-page');
+        const createAccountPage = document.getElementById('create-account-page');
+        const profilePage = document.getElementById('profile-page');
+        const gotoCreateAccount = document.getElementById('goto-create-account');
+        const backToLogin = document.getElementById('back-to-login');
+        const loginForm = document.getElementById('login-form');
+        const createAccountForm = document.getElementById('create-account-form');
+        const profileForm = document.getElementById('profile-form');
+        const deleteProfileBtn = document.getElementById('delete-profile');
+        
+        // Function to show a specific page and hide others
+        function showPage(page) {
+            // Hide all pages
+            loginPage.classList.remove('active-page');
+            createAccountPage.classList.remove('active-page');
+            profilePage.classList.remove('active-page');
+            
+            // Show the requested page
+            page.classList.add('active-page');
+        }
+        
+        // Event Listeners for navigation
+        gotoCreateAccount.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage(createAccountPage);
+        });
+        
+        backToLogin.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage(loginPage);
+        });
+        
+        // Login form submission
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real application, you would validate credentials here
+            showPage(profilePage);
+        });
+        
+        // Create account form submission
+        createAccountForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real application, you would create the account here
+            showPage(profilePage);
+        });
+        
+        // Profile form submission
+        profileForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // In a real application, you would update the profile here
+            alert('Profile updated successfully!');
+        });
+        
+        // Delete profile button
+        deleteProfileBtn.addEventListener('click', function() {
+            const confirmDelete = confirm('Are you sure you want to delete your profile? This action cannot be undone.');
+            if (confirmDelete) {
+                // In a real application, you would delete the profile here
+                alert('Profile deleted successfully!');
+                showPage(loginPage);
+            }
+        });
+        
+        // Enable/disable inputs based on checkbox state
+        document.querySelectorAll('.form-check-input').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const input = this.parentElement.nextElementSibling;
+                input.disabled = !this.checked;
+                if (!this.checked) {
+                    input.value = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
