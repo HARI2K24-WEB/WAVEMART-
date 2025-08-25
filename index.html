@@ -1,232 +1,467 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WAVEMART</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Bootstrap CSS -->
+    <title>WAVEMART - Your Shopping Destination</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
-
 <body>
-    <!-- Login Page -->
-    <div id="login-page" class="page-container active-page">
-        <div class="auth-container">
-            <div class="text-center">
-                <div class="wave-brand">WAVEMART</div>
-                <h2 class="mb-4">Sign in </h2>
-            </div>
-
-            <form id="login-form">
-                <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
-                </div>
-
-                <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter your password"
-                        required>
-                </div>
-
-                <div class="mb-3 text-end">
-                    <a href="#" id="forgot-password" class="text-decoration-none">Forgot your password?</a>
-                </div>
-
-                <button type="submit" class="btn btn-primary w-100">Sign in</button>
-
-                <div class="text-center mt-3">
-                    <span>Don't have an account? </span>
-                    <a href="#" id="goto-create-account" class="text-decoration-none">Create</a>
-                </div>
-            </form>
-        </div>
-    </div>
-
-    <!-- Create Account Page -->
-    <div id="create-account-page" class="page-container">
-        <div class="auth-container">
-            <a class="nav-back" id="back-to-login">
-                <i class="fas fa-arrow-left me-2"></i> Back to login
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <span class="brand-text">WAVEMART</span>
             </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Deals</a>
+                    </li>
+                </ul>
+                
+                <div class="d-flex align-items-center gap-3">
+                    <div class="search-container">
+                        <input type="text" class="form-control search-input" placeholder="Search essentials, groceries and more...">
+                        <i class="fas fa-search search-icon"></i>
+                    </div>
+                    
+                    <div class="d-flex align-items-center gap-2 text-muted">
+                        <i class="fas fa-truck"></i>
+                        <small>Track your order</small>
+                    </div>
+                    
+                    <div class="cart-container">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-text">Cart</span>
+                    </div>
+                    
+                    <button class="btn btn-login" data-bs-toggle="modal" data-bs-target="#authModal">
+                        Login
+                    </button>
+                    <button class="btn btn-signup">
+                        Sign-up
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-            <div class="text-center">
-                <div class="wave-brand">WAVEMART</div>
-                <h2 class="mb-4">Create account</h2>
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Category Pills -->
+            <div class="category-pills mb-4">
+                <span class="category-pill premium-fruits">Premium Fruits</span>
+                <span class="category-pill fashion">Fashion</span>
+                <span class="category-pill groceries">Groceries</span>
+                <span class="category-pill home-kitchen">Home & Kitchen</span>
+                <span class="category-pill electronics">Electronics</span>
             </div>
 
-            <form id="create-account-form">
-                <div class="mb-3">
-                    <div class="form-check">
-
-                        <label class="form-check-label" for="username-check">Username</label>
-                        <input type="text" class="form-control mt-1" placeholder="Choose a username">
+            <!-- Hero Banner -->
+            <div class="hero-banner mb-5">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p class="hero-subtitle">Best Deal Online on smart watches</p>
+                        <h1 class="hero-title">SMART WEARABLE.</h1>
+                        <p class="hero-discount">UP TO 80% OFF</p>
                     </div>
+                    <div class="hero-image">
+                        <img src="/placeholder.svg?height=200&width=200" alt="Smart Watch" class="watch-image">
+                    </div>
+                </div>
+            </div>
 
+            <!-- Smartphones Section -->
+            <div class="section-header mb-4">
+                <h3 class="section-title">Smartphones</h3>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="/placeholder.svg?height=200&width=150" alt="Galaxy M32" class="product-image">
+                            <span class="discount-badge">5G</span>
+                            <span class="offer-badge">5%</span>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-name">Galaxy M32 5G|6GB | 64 GB |</h6>
+                            <div class="product-price">
+                                <span class="current-price">₹10999</span>
+                                <span class="original-price">₹24000</span>
+                            </div>
+                            <div class="product-savings">Save - ₹6000</div>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input type="password" class="form-control mt-1" placeholder="Create a password">
-                        <label class="form-check-label" for="password-check">Password</label>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="/placeholder.svg?height=200&width=150" alt="Galaxy M52" class="product-image">
+                            <span class="discount-badge">5G</span>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-name">Galaxy M52 5G|8 | 64 GB |</h6>
+                            <div class="product-price">
+                                <span class="current-price">₹13999</span>
+                                <span class="original-price">₹26000</span>
+                            </div>
+                            <div class="product-savings">Save - ₹9000</div>
+                        </div>
                     </div>
-
                 </div>
 
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input type="email" class="form-control mt-1" placeholder="Enter your email">
-                        <label class="form-check-label" for="email-check">E-mail</label>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="/placeholder.svg?height=200&width=150" alt="Galaxy S22 Ultra" class="product-image">
+                            <span class="discount-badge">5G</span>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-name">Galaxy S22 Ultra</h6>
+                            <div class="product-price">
+                                <span class="current-price">₹52999</span>
+                                <span class="original-price">₹64000</span>
+                            </div>
+                            <div class="product-savings">Save - ₹12000</div>
+                        </div>
                     </div>
-
                 </div>
 
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input type="tel" class="form-control mt-1" placeholder="Enter your mobile number">
-                        <label class="form-check-label" for="mobile-check">Mobile</label>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="/placeholder.svg?height=200&width=150" alt="Galaxy M30" class="product-image">
+                            <span class="discount-badge">5G</span>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-name">Galaxy M30 5G|8 | 64 GB |</h6>
+                            <div class="product-price">
+                                <span class="current-price">₹13999</span>
+                                <span class="original-price">₹26000</span>
+                            </div>
+                            <div class="product-savings">Save - ₹9000</div>
+                        </div>
                     </div>
+                </div>
+            </div>
 
+            <!-- Second Row of Products -->
+            <div class="row mb-5">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="/placeholder.svg?height=200&width=150" alt="Galaxy M13" class="product-image">
+                            <span class="discount-badge">5G</span>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-name">Galaxy M13 5G|6 | 64 GB |</h6>
+                            <div class="product-price">
+                                <span class="current-price">₹10999</span>
+                                <span class="original-price">₹24000</span>
+                            </div>
+                            <div class="product-savings">Save - ₹6000</div>
+                        </div>
+                    </div>
                 </div>
 
-                <hr class="my-4">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="/placeholder.svg?height=200&width=150" alt="Galaxy S22" class="product-image">
+                            <span class="discount-badge">5G</span>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-name">Galaxy S22 Ultra</h6>
+                            <div class="product-price">
+                                <span class="current-price">₹52999</span>
+                                <span class="original-price">₹64000</span>
+                            </div>
+                            <div class="product-savings">Save - ₹9000</div>
+                        </div>
+                    </div>
+                </div>
 
-                <button type="submit" class="btn btn-primary w-100">Create <i
-                        class="fas fa-arrow-right ms-2"></i></button>
-            </form>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="/placeholder.svg?height=200&width=150" alt="Galaxy M32" class="product-image">
+                            <span class="discount-badge">5G</span>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-name">Galaxy M32 5G|6 | 64 GB |</h6>
+                            <div class="product-price">
+                                <span class="current-price">₹10999</span>
+                                <span class="original-price">₹26000</span>
+                            </div>
+                            <div class="product-savings">Save - ₹9000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="product-card">
+                        <div class="product-image-container">
+                            <img src="/placeholder.svg?height=200&width=150" alt="Galaxy M13" class="product-image">
+                            <span class="discount-badge">5G</span>
+                        </div>
+                        <div class="product-info">
+                            <h6 class="product-name">Galaxy M13 5G|6 | 64 GB |</h6>
+                            <div class="product-price">
+                                <span class="current-price">₹10999</span>
+                                <span class="original-price">₹26000</span>
+                            </div>
+                            <div class="product-savings">Save - ₹9000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Brand Offers -->
+            <div class="row mb-5">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="brand-card iphone-card">
+                        <div class="brand-logo">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <div class="brand-offer">UP to 80% OFF</div>
+                        <div class="brand-image">
+                            <img src="/placeholder.svg?height=120&width=80" alt="iPhone" class="brand-product-image">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="brand-card realme-card">
+                        <div class="brand-logo">
+                            <span class="realme-logo">realme</span>
+                        </div>
+                        <div class="brand-offer">UP to 80% OFF</div>
+                        <div class="brand-image">
+                            <img src="/placeholder.svg?height=120&width=80" alt="Realme" class="brand-product-image">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="brand-card xiaomi-card">
+                        <div class="brand-logo">
+                            <span class="xiaomi-logo">Mi</span>
+                        </div>
+                        <div class="brand-offer">UP to 80% OFF</div>
+                        <div class="brand-image">
+                            <img src="/placeholder.svg?height=120&width=80" alt="Xiaomi" class="brand-product-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Profile Page -->
-    <div id="profile-page" class="page-container">
-        <div class="profile-container">
-            <div class="profile-header">
-                <div class="wave-brand">WAVEMART</div>
-                <h2>Profile</h2>
-            </div>
-
-            <form id="profile-form">
-                <div class="text-center mb-4">
-                    <img src="#" class="profile-pic">
-                    <div>
-                        <a href="#" class="text-decoration-none">Change Photo</a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="footer-brand">
+                        <h3 class="footer-logo">WAVEMART</h3>
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Whats App</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>Call Us</span>
+                            </div>
+                        </div>
+                        <div class="app-download">
+                            <p>Download App</p>
+                            <div class="app-buttons">
+                                <img src="/placeholder.svg?height=40&width=120" alt="App Store" class="app-button">
+                                <img src="/placeholder.svg?height=40&width=120" alt="Google Play" class="app-button">
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <div class="profile-field">
-                    <label for="profile-name">Name</label>
-                    <input type="text" class="form-control" id="profile-name" placeholder="Enter your full name">
+                <div class="col-lg-6">
+                    <div class="footer-services">
+                        <h5>Customer Services</h5>
+                        <ul class="footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">E-waste Policy</a></li>
+                            <li><a href="#">Cancellation & Return Policy</a></li>
+                        </ul>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </footer>
 
-                <div class="profile-field">
-                    <label for="profile-dob">dd/mm/yyyy</label>
-                    <input type="date" class="form-control" id="profile-dob">
-                </div>
+    <!-- Auth Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content auth-modal">
+                <div class="modal-body p-0">
+                    <div class="row g-0">
+                        <!-- Sign In -->
+                        <div class="col-lg-4">
+                            <div class="auth-panel">
+                                <div class="auth-header">
+                                    <h4>WAVEMART</h4>
+                                    <p>Sign in to your account</p>
+                                </div>
+                                <form class="auth-form">
+                                    <div class="mb-3">
+                                        <label class="form-label">
+                                            <i class="fas fa-user"></i> Username
+                                        </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">
+                                            <i class="fas fa-lock"></i> Password
+                                        </label>
+                                        <input type="password" class="form-control">
+                                        <i class="fas fa-eye password-toggle"></i>
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="#" class="forgot-password">Forgot your password?</a>
+                                    </div>
+                                    <div class="mb-3">
+                                        <small>Don't have an account? <a href="#">Create</a></small>
+                                    </div>
+                                    <button type="submit" class="btn btn-auth">Sign In</button>
+                                </form>
+                            </div>
+                        </div>
 
-                <div class="profile-field">
-                    <label for="profile-location">Location</label>
-                    <input type="text" class="form-control" id="profile-location" placeholder="Enter your location">
-                </div>
+                        <!-- Create Account -->
+                        <div class="col-lg-4">
+                            <div class="auth-panel">
+                                <div class="auth-header">
+                                    <h4>WAVEMART</h4>
+                                    <p>Create account</p>
+                                </div>
+                                <form class="auth-form">
+                                    <div class="mb-3">
+                                        <label class="form-label">
+                                            <i class="fas fa-user"></i> Username
+                                        </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">
+                                            <i class="fas fa-lock"></i> Password
+                                        </label>
+                                        <input type="password" class="form-control">
+                                        <i class="fas fa-eye password-toggle"></i>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">
+                                            <i class="fas fa-envelope"></i> E-mail
+                                        </label>
+                                        <input type="email" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">
+                                            <i class="fas fa-mobile-alt"></i> Mobile
+                                        </label>
+                                        <input type="tel" class="form-control">
+                                    </div>
+                                    <button type="submit" class="btn btn-auth">Create</button>
+                                    <div class="social-login">
+                                        <p>Or create account using social media</p>
+                                        <div class="social-buttons">
+                                            <button class="btn btn-social facebook">
+                                                <i class="fab fa-facebook-f"></i>
+                                            </button>
+                                            <button class="btn btn-social twitter">
+                                                <i class="fab fa-twitter"></i>
+                                            </button>
+                                            <button class="btn btn-social google">
+                                                <i class="fab fa-google"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
 
-                <div class="profile-field">
-                    <label for="profile-contact">Contact Number</label>
-                    <input type="tel" class="form-control" id="profile-contact" placeholder="Enter your contact number">
+                        <!-- Profile -->
+                        <div class="col-lg-4">
+                            <div class="auth-panel">
+                                <div class="auth-header">
+                                    <h4>WAVEMART</h4>
+                                    <p>Profile</p>
+                                </div>
+                                <div class="profile-avatar">
+                                    <div class="avatar-circle">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                </div>
+                                <form class="auth-form">
+                                    <div class="mb-3">
+                                        <label class="form-label">
+                                            <i class="fas fa-user"></i> Name
+                                        </label>
+                                        <input type="text" class="form-control" placeholder="Ali Connors">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">
+                                            <i class="fas fa-map-marker-alt"></i> Location
+                                        </label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">
+                                            <i class="fas fa-phone"></i> Contact Number
+                                        </label>
+                                        <input type="tel" class="form-control">
+                                    </div>
+                                    <div class="profile-options">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="updateProfile">
+                                            <label class="form-check-label" for="updateProfile">
+                                                UPDATE PROFILE
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="orderProfile">
+                                            <label class="form-check-label" for="orderProfile">
+                                                ORDER PROFILE
+                                            </label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
-                <div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary">UPDATE PROFILE</button>
-                    <button type="button" class="btn btn-danger" id="delete-profile">DELETE PROFILE</button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-
-    <!-- Custom JavaScript -->
-    <script>
-        // DOM Elements
-        const loginPage = document.getElementById('login-page');
-        const createAccountPage = document.getElementById('create-account-page');
-        const profilePage = document.getElementById('profile-page');
-        const gotoCreateAccount = document.getElementById('goto-create-account');
-        const backToLogin = document.getElementById('back-to-login');
-        const loginForm = document.getElementById('login-form');
-        const createAccountForm = document.getElementById('create-account-form');
-        const profileForm = document.getElementById('profile-form');
-        const deleteProfileBtn = document.getElementById('delete-profile');
-
-        // Function to show a specific page and hide others
-        function showPage(page) {
-            // Hide all pages
-            loginPage.classList.remove('active-page');
-            createAccountPage.classList.remove('active-page');
-            profilePage.classList.remove('active-page');
-
-            // Show the requested page
-            page.classList.add('active-page');
-        }
-
-        // Event Listeners for navigation
-        gotoCreateAccount.addEventListener('click', function (e) {
-            e.preventDefault();
-            showPage(createAccountPage);
-        });
-
-        backToLogin.addEventListener('click', function (e) {
-            e.preventDefault();
-            showPage(loginPage);
-        });
-
-        // Login form submission
-        loginForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // In a real application, you would validate credentials here
-            showPage(profilePage);
-        });
-
-        // Create account form submission
-        createAccountForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // In a real application, you would create the account here
-            showPage(profilePage);
-        });
-
-        // Profile form submission
-        profileForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            // In a real application, you would update the profile here
-            alert('Profile updated successfully!');
-        });
-
-        // Delete profile button
-        deleteProfileBtn.addEventListener('click', function () {
-            const confirmDelete = confirm('Are you sure you want to delete your profile? This action cannot be undone.');
-            if (confirmDelete) {
-                // In a real application, you would delete the profile here
-                alert('Profile deleted successfully!');
-                showPage(loginPage);
-            }
-        });
-
-        // Enable/disable inputs based on checkbox state
-        document.querySelectorAll('.form-check-input').forEach(checkbox => {
-            checkbox.addEventListener('change', function () {
-                const input = this.parentElement.nextElementSibling;
-                input.disabled = !this.checked;
-                if (!this.checked) {
-                    input.value = '';
-                }
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>

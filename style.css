@@ -1,183 +1,579 @@
-        :root {
-            --primary-color: #f703ca;
-            --secondary-color: #eeddee;
-            --accent-color: #ff006e;
-            --light-bg: #00d9ff;
-            --dark-text: #212529;
-        }
-        
-        body {
-            background-color: var(--light-bg);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark-text);
-        }
-        
-        .wave-brand {
-            font-weight: 700;
-            font-size: 2.2rem;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 1.5rem;
-        }
-        
-        .auth-container {
-            max-width: 400px;
-            margin: 5rem auto;
-            padding: 2rem;
-            background: rgb(255, 255, 255);
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .form-control {
-            padding: 0.8rem 1.2rem;
-            border-radius: 8px;
-            margin-bottom: 1.2rem;
-            border: 2px solid #e9ecef;
-            transition: all 0.3s;
-        }
-        
-        .form-control:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.25rem rgba(58, 134, 255, 0.25);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            border: none;
-            padding: 0.8rem;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-        
-        .divider {
-            display: flex;
-            align-items: center;
-            text-align: center;
-            margin: 1.5rem 0;
-            color: #6c757d;
-        }
-        
-        .divider::before,
-        .divider::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px solid #dee2e6;
-        }
-        
-        .divider::before {
-            margin-right: .5em;
-        }
-        
-        .divider::after {
-            margin-left: .5em;
-        }
-        
-        .social-btn {
-            display: block;
-            width: 100%;
-            padding: 0.7rem;
-            border-radius: 8px;
-            margin-bottom: 0.8rem;
-            text-align: center;
-            font-weight: 500;
-            transition: all 0.3s;
-        }
-        
-        .social-btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        .facebook-btn {
-            background-color: #3b5998;
-            color: white;
-        }
-        
-        .google-btn {
-            background-color: #db4a39;
-            color: white;
-        }
-        
-        .twitter-btn {
-            background-color: #1da1f2;
-            color: white;
-        }
-        
-        .profile-container {
-            max-width: 600px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .profile-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        
-        .profile-pic {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .profile-field {
-            margin-bottom: 1.5rem;
-        }
-        
-        .profile-field label {
-            font-weight: 600;
-            color: #6c757d;
-            margin-bottom: 0.3rem;
-        }
-        
-        .profile-field .form-control {
-            background-color: #f8f9fa;
-        }
-        
-        .btn-danger {
-            background: linear-gradient(45deg, #ff006e, #fb5607);
-            border: none;
-            padding: 0.8rem;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .btn-danger:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-        
-        .page-container {
-            display: none;
-        }
-        
-        .active-page {
-            display: block;
-        }
-        
-        .nav-back {
-            cursor: pointer;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            display: inline-flex;
-            align-items: center;
-        }
-        
-        .nav-back:hover {
-            color: var(--secondary-color);
-        }
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24, #feca57, #ff9ff3, #54a0ff);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.navbar {
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.brand-text {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.search-container {
+  position: relative;
+  width: 300px;
+}
+
+.search-input {
+  padding-left: 40px;
+  border-radius: 25px;
+  border: 1px solid #e0e0e0;
+  background: #f8f9fa;
+}
+
+.search-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+}
+
+.cart-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #6c757d;
+  cursor: pointer;
+}
+
+.btn-login {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+.btn-signup {
+  background: linear-gradient(45deg, #feca57, #ff9ff3);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 20px;
+  font-weight: 500;
+}
+
+/* Main Content */
+.main-content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  margin: 20px;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Category Pills */
+.category-pills {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.category-pill {
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.premium-fruits {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+}
+
+.fashion {
+  background: linear-gradient(45deg, #ff9ff3, #f368e0);
+  color: white;
+}
+
+.groceries {
+  background: linear-gradient(45deg, #feca57, #ff9f43);
+  color: white;
+}
+
+.home-kitchen {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+}
+
+.electronics {
+  background: linear-gradient(45deg, #54a0ff, #2e86de);
+  color: white;
+}
+
+/* Hero Banner */
+.hero-banner {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  border-radius: 20px;
+  padding: 40px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-discount {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #feca57;
+}
+
+.watch-image {
+  max-width: 200px;
+  height: auto;
+}
+
+/* Section Headers */
+.section-title {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Product Cards */
+.product-card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image-container {
+  position: relative;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 150px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #54a0ff;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.offer-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ff6b6b;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.product-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.current-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.original-price {
+  font-size: 14px;
+  color: #6c757d;
+  text-decoration: line-through;
+}
+
+.product-savings {
+  font-size: 12px;
+  color: #27ae60;
+  font-weight: 500;
+}
+
+/* Brand Cards */
+.brand-card {
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.iphone-card {
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+}
+
+.realme-card {
+  background: linear-gradient(135deg, #feca57, #ff9f43);
+}
+
+.xiaomi-card {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+}
+
+.brand-logo {
+  font-size: 2rem;
+}
+
+.realme-logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.xiaomi-logo {
+  background: white;
+  color: #ff6b6b;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: 700;
+}
+
+.brand-offer {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.brand-product-image {
+  max-width: 80px;
+  height: auto;
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, #8e44ad, #3498db);
+  color: white;
+  padding: 40px 0;
+  margin-top: 50px;
+}
+
+.footer-logo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.app-download p {
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.app-button {
+  height: 40px;
+  border-radius: 8px;
+}
+
+.footer-services h5 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+}
+
+/* Auth Modal */
+.auth-modal .modal-content {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.auth-panel {
+  padding: 40px 30px;
+  height: 100%;
+  background: white;
+  position: relative;
+}
+
+.auth-panel:nth-child(1) {
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(238, 90, 36, 0.1));
+}
+
+.auth-panel:nth-child(2) {
+  background: linear-gradient(135deg, rgba(254, 202, 87, 0.1), rgba(255, 159, 243, 0.1));
+}
+
+.auth-panel:nth-child(3) {
+  background: linear-gradient(135deg, rgba(84, 160, 255, 0.1), rgba(46, 134, 222, 0.1));
+}
+
+.auth-header h4 {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.auth-header p {
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+
+.auth-form .form-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2c3e50;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.auth-form .form-control {
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6c757d;
+}
+
+.forgot-password {
+  color: #ff6b6b;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-auth {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 30px;
+  font-weight: 600;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.social-login {
+  text-align: center;
+}
+
+.social-login p {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 15px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn-social {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.facebook {
+  background: #3b5998;
+}
+
+.twitter {
+  background: #1da1f2;
+}
+
+.google {
+  background: #dd4b39;
+}
+
+.profile-avatar {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.avatar-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: white;
+  font-size: 2rem;
+}
+
+.profile-options {
+  margin-top: 20px;
+}
+
+.form-check {
+  margin-bottom: 10px;
+}
+
+.form-check-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    margin: 10px;
+    padding: 20px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .search-container {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .category-pills {
+    justify-content: center;
+  }
+
+  .auth-modal .modal-dialog {
+    margin: 10px;
+  }
+
+  .auth-panel {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+
+  .category-pill {
+    font-size: 12px;
+    padding: 6px 15px;
+  }
+
+  .product-card {
+    padding: 15px;
+  }
+}
